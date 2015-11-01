@@ -1,18 +1,18 @@
-# 資源（Assets）
+# 资源（Assets）
 
-### 概觀
+### 概述
 
-資源指的是在你的伺服器上想讓外界存取的[靜態檔案](http://en.wikipedia.org/wiki/Static_web_page)（js、css、圖檔等等）。在 Sails，這些檔案都放在 [`assets/`](http://beta.sailsjs.org/#/documentation/anatomy/myApp/assets) 目錄，當你啟動應用程式，他們會被處理並同步到一個隱藏的暫存目錄(`.tmp/public/`)。這個 `.tmp/public` 資料夾就是 Sails 實際提供的內容，大致等同於 [express](https://github.com/expressjs) 的「public」資料夾，或是其他你或許熟悉的網站伺服器如 Apache 的「www」資料夾。這中間的過程允許 Sails 準備或預先編譯在用戶端上使用的資源，像是 LESS、CoffeeScript、SASS、spritesheets、Jade 樣版等等。
+资源指的是在你的服务器上想让外界存取的[静态文档](http://en.wikipedia.org/wiki/Static_web_page)（js、css、图档等等）。在 Sails，这些文档都放在 [`assets/`](http://beta.sailsjs.org/#/documentation/anatomy/myApp/assets) 目录，当你启动应用程序，他们会被处理并同步到一个隐藏的暂存目录(`.tmp/public/`)。这个 `.tmp/public` 文件夹就是 Sails 实际提供的内容，大致等同于 [express](https://github.com/expressjs) 的「public」文件夹，或是其他你或许熟悉的网站服务器如 Apache 的「www」文件夹。这中间的过程允许 Sails 准备或预先编译在用户端上使用的资源，像是 LESS、CoffeeScript、SASS、spritesheets、Jade 模板等等。
 
-### 靜態中介軟體（Static middleware）
+### 静态中间件（Static middleware）
 
-在幕後，Sails 使用 Express 的[靜態中介軟體](http://www.senchalabs.org/connect/static.html)來提供你的資源。你可以在 [`/config/http.js`](/#/documentation/reference/sails.config/sails.config.http.html) 設定這個中介軟體（例如 cache 設定）。
+在幕后，Sails 使用 Express 的[静态中间件](http://www.senchalabs.org/connect/static.html)来提供你的资源。你可以在 [`/config/http.js`](/#/documentation/reference/sails.config/sails.config.http.html) 设置这个中间件（例如 cache 设置）。
 
 ##### `index.html`
-如同大多數網頁伺服器，Sails 實踐了 `index.html` 慣例。舉例來說，如果你在新的 Sails 專案建立 `assets/foo.html`，便可透過 `http://localhost:1337/foo.html` 存取。但是，如果你建立 `assets/foo/index.html`，則可透過 `http://localhost:1337/foo/index.html` 及 `http://localhost:1337/foo` 存取。
+如同大多数网页服务器，Sails 实践了 `index.html` 约定。举例来说，如果你在新的 Sails 工程建立 `assets/foo.html`，便可通过 `http://localhost:1337/foo.html` 存取。但是，如果你建立 `assets/foo/index.html`，则可通过 `http://localhost:1337/foo/index.html` 及 `http://localhost:1337/foo` 存取。
 
-##### 優先權
-重要的是需注意靜態[中介軟體](http://stephensugden.com/middleware_guide/)是安裝在 Sails 路由**之後**。所以，如果你定義了一個[自訂路由](/#/documentation/concepts/Routes?q=custom-routes)，但在你的資源目錄也有檔案與該路徑衝突，自訂路由會在到達靜態中介軟體前攔截請求。舉例來說，如果你建立 `assets/index.html` 且沒有定義路由在 [`config/routes.js`](/#/documentation/reference/sails.config/sails.config.routes.html) 檔案，它會被當成你的首頁。但是如果你定義一個自訂路由 `'/': 'FooController.bar'`，將優先採用此路由。
+##### 优先权
+重要的是需注意静态[中间件](http://stephensugden.com/middleware_guide/)是安装在 Sails 路由**之后**。所以，如果你定义了一个[自定义路由](/#/documentation/concepts/Routes?q=custom-routes)，但在你的资源目录也有文档与该路径冲突，自定义路由会在到达静态中间件前拦截请求。举例来说，如果你建立 `assets/index.html` 且没有定义路由在 [`config/routes.js`](/#/documentation/reference/sails.config/sails.config.routes.html) 文档，它会被当成你的首页。但是如果你定义一个自定义路由 `'/': 'FooController.bar'`，将优先采用此路由。
 
 
 <docmeta name="uniqueID" value="Assets220313">

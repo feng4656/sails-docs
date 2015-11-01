@@ -1,21 +1,21 @@
-# 什麼是 Sails？
+# 什么是 Sails？
 
 
-Sails 當然是一個網站開發框架。但退一步，這意味著什麼？有時候，當我們提到「網站」，我們指的是「前端網站」。我們認為像是網頁標準、HTML 5 或 CSS 3 的概念，以及像是 Backbone、Angular 或 jQuery 的框架。Sails 不是「那種」網站開發框架。Sails 與 Angular 及 Backbone 運作良好，但你永遠不會使用 Sails _取代_這些類別庫。
+Sails 当然是一个网站开发框架。但退一步，这意味著什么？有时候，当我们提到「网站」，我们指的是「前端网站」。我们认为像是网页标准、HTML 5 或 CSS 3 的概念，以及像是 Backbone、Angular 或 jQuery 的框架。Sails 不是「那种」网站开发框架。Sails 与 Angular 及 Backbone 运作良好，但你永远不会使用 Sails _取代_这些类别库。
 
-在另一方面，有時候當我們談論「網站開發框架」，我們指的是「後端網站」。這喚起了像是 REST、HTTP 或 WebSockets 的概念，以及像是 Java、Ruby 或 Node.js 的技術。一個「後端網站」框架可以幫助你做到一些事情，如建立 API、提供 HTML 檔案及同時處理成千上萬的使用者。Sails 是「那種」網站框架。
+另一方面，有时候当我们谈论「网站开发框架」，我们指的是「后端网站」。这唤起了像是 REST、HTTP 或 WebSockets 的概念，以及像是 Java、Ruby 或 Node.js 的技术。一个「后端网站」框架可以帮助你做到一些事情，如建立 API、提供 HTML 文档及同时处理成千上万的使用者。Sails 是「那种」网站框架。
 
 
 
-## 慣例優於設定
+## 约定优于配置
 
-Sails 完成許多與其他 MVC 網站應用程式框架相同的目標，使用許多相同的方法學。這樣做是有目的的。一致的方式使得參與其中的任何人開發應用程式更具可預測性且高效率的。
+Sails 完成许多与其他 MVC 网站应用程序框架相同的目标，使用许多相同的方法学。这样做是有目的的。一致的方式使得参与其中的任何人开发应用程序更具可预测性且高效率的。
 
-想像一下，開始一份新的工作，在一家公司建立 Sails 應用程式。如果任何在你團隊中的人曾使用如 Zend、Laravel、CodeIgniter、Cake、Grails、Django、ASP.NET MVC 或 Rails，會覺得很熟悉 Sails。不僅如此，一般來說，他們還可以了解 Sails 專案，如何撰寫他們在過去已反覆實作的基本模式；無論他們的背景是 PHP、Ruby、Java、C# 或 Node.js。那麼你的第二個應用程式或第三個？每當你建立新的 Sails 應用程式，你以一個健全、熟悉的樣版開始，讓你更有效率。在許多情況下，你甚至可以回收重複使用一些後端程式碼。
+想像一下，开始一份新的工作，在一家公司建立 Sails 应用程序。如果任何在你团队中的人曾使用如 Zend、Laravel、CodeIgniter、Cake、Grails、Django、ASP.NET MVC 或 Rails，会觉得很熟悉 Sails。不仅如此，一般来说，他们还可以了解 Sails 工程，如何撰写他们在过去已反复实践的基本模式；无论他们的背景是 PHP、Ruby、Java、C# 或 Node.js。那么你的第二个应用程序或第三个？每当你建立新的 Sails 应用程序，你以一个健全、熟悉的样版开始，让你更有效率。在许多情况下，你甚至可以回收重复使用一些后端程序码。
 
-> **歷史**
+> **历史**
 >
-> Sails 沒有發明這個概念，它[已經存在多年](https://en.wikipedia.org/wiki/Convention_over_configuration)。即使在 Ruby on Rails 那句「慣例優於設定」（或稱 CoC）流行之前，JavaBeans 借用了常見於 90 年代末期到 21 世紀初期，傳統的 Java 網站框架極其冗長的 XML 設定到許多核心規範中。簡單來說就是用簡單的慣例（Convention）來取代繁雜的設定（Configuration），簡化開發者的工作。
+> Sails 没有发明这个概念，它[已经存在多年](https://en.wikipedia.org/wiki/Convention_over_configuration)。即使在 Ruby on Rails 那句「约定优于配置」（或称 CoC）流行之前，JavaBeans 借用了常见于 90 年代末期到 21 世纪初期，传统的 Java 网站框架极其冗长的 XML 设置到许多核心规范中。简单来说就是用简单的约定（Convention）来取代繁杂的配置（Configuration），简化开发者的工作。
 
 
 ## Loose Coupling
@@ -46,84 +46,4 @@ Sails 完成許多與其他 MVC 網站應用程式框架相同的目標，使用
 
 > TODO: explain where this fits into the Node.js ecosystem, and pay homage to the PHP community (pragmatism is the best thing PHP has going for it)
 
-> TODO: provide some examples of choices we've made w/ Sails that lean away from strict adherance and towards pragmatism (e.g. globals, services, symlinking dependencies on sails new, etc.)
-
-> TODO: explain how it's important to allow for elegant harmony to be restored (ability to disable globals, running a sails app as a standard node module with `npm start`, running sails from a single file)
-
-
-
-<!--
-## The MVC Architecture
-Sails implements the aforementioned Model, View, Controller (MVC) architecture for Node.js. You can learn more about MVC <a href="https://docs.djangoproject.com/en/dev/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names">here</a>, <a href="http://symfony.com/legacy/doc/askeet/1_0/en/3">here</a>, and <a href="http://guides.rubyonrails.org/getting_started.html#the-mvc-architecture">here</a>, but the tl;dr is that it's the really awesome, industry-standard way of doing things for modern web apps.
-If you're wondering if Sails is a "proper MVC", you're probably right! It wasn’t made to mimic Django, Zend, or Rails; it was made to resemble the MVC architecture we’re used to while still unlocking the features necessary to leverage the unique advantages of Node.js: seamless WebSockets support, advanced memory management using streams, and composable, data-driven APIs using the powerful concept of chainable middleware from Connect/Express.
--->
-
-
-
-<!--
-## With a Modern Twist
-Sails does a few things other MVC frameworks can't do:
-
-
-### Socket.io / Realtime / WebSockets
-Sails supports transport agnostic routing, which allows your controllers/policies to automatically handle Socket.io / WebSocket messages.  In the past, you'd have to maintain a separate code base to make that happen. This makes it much easier to add pubsub features, in particular the server-originated or 'comet' notifications you need for realtime apps, realtime analytics dashboards, and multiplayer games.
-
-### Performance
-Node has fantastic performance. Specifically, we've had some great results using 4 EC2 small servers to scale Sails to 10,000 concurrent connections.  In that case, the bottleneck was actually our test client.  Sails users have reported getting about 9k concurrent connections on one EC2 medium server.
-
-+ Built-in support for Redis session store, and Redis MQ for reverse pubsub routing
-
-### Node.js
-Node.js is the fastest-growing, all-javascript solution to <a href="https://www.youtube.com/watch?v=jo_B4LTHi3I">server-side development</a>. Writing your code in one language on the front-end and back-end means less context-shifting, faster development, and better apps.
-
-### Express
-Sails's controllers and policies are really just [Express](https://github.com/expressjs/) middleware. This means your Sails app logic is interoperable with existing Express apps, and vice versa
-
-+ Supports the existing ecosystem of Express middleware
-
-### REST Blueprints
-  + Automatically generated JSON API for manipulating models (You don't have to write any backend code to build simple CRUD apps)
-  + Automatic route bindings for your controller actions
-
-### Built-in support for controller/action-level middleware mappings of:
-  + Authentication logic
-  + Role-based access control
-  + Custom policies (e.g. file storage quotas)
-
-
-## Convenience features for front-end developers
-If you are developing an HTML/CSS front-end powered by Sails, there are some other convenience features we've included that might help you out.
-
-### Support for Grunt
-As of Sails v0.9, all new projects come with a Gruntfile. Grunt is to Node.js as mvn/ant is to Java, or as rake is to Ruby. It has a strong, supportive community, and a wide array of plugins and build tools. Adding support for your favorite template engine or css/js preprocessor is as easy as modifying your project's Gruntfile
-
-### Asset bundling
-Sails bundles support for LESS and JST templates
-
-  + If you use the `--linker` option when creating your new project, your assets will be automatically bundled up and included in your layout HTML
-  + Front-end support for SASS, Handlebars, CoffeeScript, Stylus, TypeScript, etc. is as easy as modifying your app's Gruntfile
-  + In production mode, Sails will also minify and concatenate your assets
-  + If you need to take web performance even further (this comes up for mobile web apps in particular), you can run `sails build` to output a CDN-ready snapshot of your apps assets
-
-### PhoneGap, Chrome extensions, and SPA-friendliness
-  + `sails build` spits out a ready-to-deploy `www` directory for use in all of the sorts of places where you need indepenedent, API-driven front-end code
-  + Sails has easy-to-use CORS integration
-  + Built-in support for cross-site request forgery (CSRF) protection, with a handy token-based option for single-page apps
-
-
-
-## Finally, a note for UX-focused guys/gals
-> ####From one geek to another:
-
-> I work on a lot of web and mobile apps with our team at <a href="http://balderdash.co">Balderdash</a>.  More than ever before, it's important that your applications not only work, but look and feel awesome.
-I originally built Sails to tackle these sorts of API-driven, front-end heavy projects for our startup and enterprise clients.  Since then, top-notch experiences have become industry standard (typically using Backbone, Angular, Ember, Knockout, etc.)
-Reducing the amount of time and energy you spend on your app's server code allows you to spend more time focusing on cool features.  The easier your backend code is to write and maintain, the more nimble you can be.  The more nimble you are, the more adaptable your project can be to your users' needs, and the faster you respond to bug fixes.  The more adaptable you are... you get the idea!
-
-
--->
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/8acf2fc2ca0aca8a3018e355ad776ed7 "githalytics.com")](http://githalytics.com/balderdashy/sails/wiki/what_is_sails)
-
-
-<docmeta name="uniqueID" value="WhatIsSails126387">
-<docmeta name="displayName" value="What Is Sails">
+> TODO: provide some examples of choices we've made w/ 

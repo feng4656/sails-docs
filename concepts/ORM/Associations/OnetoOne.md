@@ -1,11 +1,11 @@
-# 一對一（One-to-One）
-### 概觀
+# 一对一（One-to-One）
+### 概述
 
-一對一關聯表示一個模型可能只與另一個模型關聯。為了使模型知道它與其他哪些模型關聯，外鍵必需包含在記錄中。
+一对一关联表示一个模型可能只与另一个模型关联。为了使模型知道它与其他哪些模型关联，外键必需包含在记录中。
 
-### 一對一範例
+### 一对一例子
 
-在這個範例中，我們關聯了一個 `Pet` 到 `User`。在這種情況下 `User` 可能只有一個 `Pet`，但是 `Pet` 並不侷限於單一 `User`。
+在这个例子中，我们关联了一个 `Pet` 到 `User`。在这种情况下 `User` 可能只有一个 `Pet`，但是 `Pet` 并不局限于单一 `User`。
 
 
 `myApp/api/models/pet.js`
@@ -107,8 +107,8 @@ null { name: 'Mike',
      owner: 1 } }
 
 ```
-### 注意事項
-> 請查看 [Waterline 文件](https://github.com/balderdashy/waterline-docs/blob/master/associations.md)取得這種類型的關聯的更多資訊
+### 注意事项
+> 请查看 [Waterline 文件](https://github.com/balderdashy/waterline-docs/blob/master/associations.md)取得这种类型的关联的更多资讯
 
 
 <docmeta name="uniqueID" value="OnetoOne169258">

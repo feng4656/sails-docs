@@ -1,7 +1,7 @@
-# 直接存取連接資料表（Direct Access to Join Tables）
-### 極危險！！
+# 直接存取连接资料表（Direct Access to Join Tables）
+### 极危险！！
 
-你可以使用 waterline 來存取底層連接資料表。除非你知道自己在做什麼，否則別這樣做！
+你可以使用 waterline 来存取底层连接资料表。除非你知道自己在做什么，否则别这样做！
 
 
 TODO

@@ -66,25 +66,3 @@ $.post('/checkout', {
   order: '8abfe13491afe',
   electronicReceiptOK: true,
   _csrf: 'USER_CSRF_TOKEN'
-}, function andThen(){ ... });
-```
-
-With some client-side modules, you may not have access to the AJAX request itself. In this case, you can consider sending the CSRF token directly in the URL of your query. However, if you do so, remember to URL-encode the token before spending it:
-```js
-..., {
-  checkoutAction: '/checkout?_csrf='+encodeURIComponent('USER_CSRF_TOKEN')
-}
-```
-
-
-
-### Notes
-
-> + For most developers and organizations, CSRF attacks need only be a concern if you allow users to log into/securely access your Sails backend from the browser. If you _don't_ (e.g. users only access the secured sections from your native iOS or Android app), it is possible you don't need to enable CSRF protection.  Why?  Because technically, the common CSRF attack discussed on this page is only _possible_ in scenarios where users use the _same client application_ (e.g. Chrome) to access different web services (e.g. Chase.com, Horrible-Hacker-Site.com.)
-> + For more information on CSRF, check out [Wikipedia](http://en.wikipedia.org/wiki/Cross-site_request_forgery)
-> + For "spending" CSRF tokens in a traditional form submission, refer to the example above (under "Using View Locals".)
-> + You can choose to send the CSRF token as a header instead of a parameter- refer to the [Connect documentation](http://www.senchalabs.org/connect/csrf.html) for the most up-to-date information.  The next (post v0.10) minor release of Sails will likely upgrade to Express 4, at which point the new Express csrf middleware will be included instead, but backwards compatibility will be maintained.
-
-<docmeta name="uniqueID" value="CSRF300312">
-<docmeta name="displayName" value="CSRF">
-

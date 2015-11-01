@@ -1,14 +1,14 @@
-# 託管（Hosting）
+# 托管（Hosting）
 
-以下是不完整的 Sails.js 託管服務供應商清單。
+以下是不完整的 Sails.js 托管服务供应商清单。
 
 ##### 部署到 Modulus？
 
 + http://blog.modulus.io/sails-js
 
 ##### 部署到 NodeJitsu？
-要部署到 NodeJitsu，你需要稍微修改設定檔：
-在應用程式資料夾開啟 `config/local.js`。你需要加入以下幾行到此設定檔。
+要部署到 NodeJitsu，你需要稍微修改设置文档：
+在应用程序文件夹开启 `config/local.js`。你需要加入以下几行到此设置文档。
 
 ```
 // Port this Sails application will live on
@@ -16,14 +16,14 @@ port: 80,
 host: 'subdomain.jit.su',
 ```
 
-`host:` 不是預設建立的屬性。你需要加入這個屬性。當執行 `jitsu deploy` 時，Nodejitsu 會詢問你的 `subdomain`
+`host:` 不是默认建立的属性。你需要加入这个属性。当执行 `jitsu deploy` 时，Nodejitsu 会询问你的 `subdomain`
 
 + https://blog.nodejitsu.com/keep-a-nodejs-server-up-with-forever/
 + https://github.com/balderdashy/sails/issues/455
 
 ##### 部署到 OpenShift？
-要部署到 OpenShift，你需要稍微修改設定檔：
-在應用程式資料夾開啟 `config/local.js`。你需要加入以下幾行到此設定檔。
+要部署到 OpenShift，你需要稍微修改设置文档：
+在应用程序文件夹开启 `config/local.js`。你需要加入以下几行到此设置文档。
 
 ```
 port: process.env.OPENSHIFT_NODEJS_PORT,
@@ -62,10 +62,10 @@ host: process.env.OPENSHIFT_NODEJS_IP,
 
 
 
-##### 取得專業協助
+##### 取得专业协助
 
-這些日子以來，擁有一定技術的情況下，部署強大的應用程式變得越來越簡單。儘管如此，你不一定有時間來自己處理這些事情。
-Sails.js 是由我的公司維護，[Balderdash](http://balderdash.co)，一間在美國德州奧斯丁的 Node.js 顧問公司。如果你的公司需要專業協助，我們很樂意提供幫助。部署不是很困難，而且在大多情況下，它不應該超過幾個小時。
+这些日子以来，拥有一定技术的情况下，部署强大的应用程序变得越来越简单。尽管如此，你不一定有时间来自己处理这些事情。
+Sails.js 是由我的公司维护，[Balderdash](http://balderdash.co)，一间在美国德州奥斯丁的 Node.js 顾问公司。如果你的公司需要专业协助，我们很乐意提供帮助。部署不是很困难，而且在大多情况下，它不应该超过几个小时。
 
 
 

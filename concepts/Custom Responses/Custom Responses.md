@@ -1,10 +1,10 @@
-# 自訂回應（Custom Responses）
+# 自定义回应（Custom Responses）
 
-### 概觀
+### 概述
 
-Sails v.10 允許自訂伺服器回應。Sails 預設附帶一些常見的回應類型。可以在專案的 `/api/responses` 目錄找到它們。只需編輯對應的 .js 檔案，就可以自訂。
+Sails v.10 允许自定义服务器回应。Sails 默认附带一些常见的回应类型。可以在工程的 `/api/responses` 目录找到它们。只需编辑对应的 .js 文档，就可以自定义。
 
-作為一個簡單的範例，思考以下的控制器動作：
+作为一个简单的例子，思考以下的控制器动作：
 
 ```
 foo: function(req, res) {
@@ -16,13 +16,13 @@ foo: function(req, res) {
 }
 ```
 
-這個程式碼透過發送一個 400 錯誤狀態及簡短問題描述來處理錯誤請求。然而，這個程式碼有幾個缺點，主要是：
+这个程序码通过发送一个 400 错误状态及简短问题描述来处理错误请求。然而，这个程序码有几个缺点，主要是：
 
-* 它不是*標準化*的：該代碼是特定於此情況，我們必須在任何地方努力保持相同的格式
-* 它不是*被分離*的：當我們想要在其他地方使用類似的方法，就需要複製／貼上程式碼
-* 它不是*內容協商*的：如果用戶端期待一個 JSON 回應，那別指望了
+* 它不是*标准化*的：该代码是特定于此情况，我们必须在任何地方努力保持相同的格式
+* 它不是*被分离*的：当我们想要在其他地方使用类似的方法，就需要复制／贴上程序码
+* 它不是*内容协商*的：如果用户端期待一个 JSON 回应，那别指望了
 
-現在，思考一下這個修改：
+现在，思考一下这个修改：
 
 ```
 foo: function(req, res) {
@@ -34,52 +34,52 @@ foo: function(req, res) {
 ```
 
 
-這種方法具有許多優點：
+这种方法具有许多优点：
 
- - 錯誤被標準化
- - 有考慮到正式環境與開發環境的日誌記錄
- - 錯誤代碼是一致的
- - 有考慮到內容協商（JSON 與 HTML）
- - 可在適當的共用回應檔案快速的調整 API
+ - 错误被标准化
+ - 有考虑到生产环境与开发环境的日志记录
+ - 错误代码是一致的
+ - 有考虑到内容协商（JSON 与 HTML）
+ - 可在适当的共用回应文档快速的调整 API
 
-### 回應方法和檔案（Responses methods and files）
+### 回应方法和文档（Responses methods and files）
 
-任何儲存在 `/api/responses` 資料夾的 `.js` 腳本可透過在控制器內呼叫 `res.[responseName]` 來執行。例如，可以透過呼叫 `res.serverError(errors)` 來執行 `/api/responses/serverError.js`。在回應腳本內可以透過 `this.req` 和 `this.res` 取得請求及回應物件；這讓實際的回應方法可以取得任意參數。（如 `serverError` 的 `errors` 參數）。
+任何储存在 `/api/responses` 文件夹的 `.js` 脚本可通过在控制器内呼叫 `res.[responseName]` 来执行。例如，可以通过呼叫 `res.serverError(errors)` 来执行 `/api/responses/serverError.js`。在回应脚本内可以通过 `this.req` 和 `this.res` 取得请求及回应对象；这让实际的回应方法可以取得任意参数。（如 `serverError` 的 `errors` 参数）。
 
-### 預設回應
+### 默认回应
 
-以下的回應已綁定在所有新的 Sails 應用程式的 `/api/responses` 資料夾內。當用戶端期望收到 JSON，會回應一個包含了 HTTP 狀態代碼的 `status` 鍵及任何錯誤相關資訊的標準化 JSON 物件。
+以下的回应已绑定在所有新的 Sails 应用程序的 `/api/responses` 文件夹内。当用户端期望收到 JSON，会回应一个包含了 HTTP 状态代码的 `status` 键及任何错误相关资讯的标准化 JSON 对象。
 
 #### res.serverError(errors)
 
-這個回應會將錯誤標準化為適當、可讀取的 `Error` 物件。 `errors` 可以是一個或多個字串或 `Error` 物件。它會記錄所有錯誤到 Sails 記錄器（通常是終端機），並當用戶端期望收到 HTML 時回應 `views/500.*` 檢視檔案，或當用戶端期望收到 JSON 時回應一個 JSON 物件。在開發模式下，錯誤清單會包含在回應中。在正式環境下，實際的錯誤會受到抑制。
+这个回应会将错误标准化为适当、可读取的 `Error` 对象。 `errors` 可以是一个或多个字串或 `Error` 对象。它会记录所有错误到 Sails 记录器（通常是终端机），并当用户端期望收到 HTML 时回应 `views/500.*` 检视文档，或当用户端期望收到 JSON 时回应一个 JSON 对象。在开发模式下，错误清单会包含在回应中。在生产环境下，实际的错误会受到抑制。
 
 #### res.badRequest(validationErrors, redirectTo)
 
-對於期望收到 JSON 的請求者，這個回應包含了 400 狀態碼及被作為 `validationErrors` 所傳送的任何相關資料。
+对于期望收到 JSON 的请求者，这个回应包含了 400 状态码及被作为 `validationErrors` 所传送的任何相关资料。
 
-對於傳統的（非 AJAX）網頁表單，當使用者提交無效的表單資料，這個中介軟體遵循了最佳做法：
+对于传统的（非 AJAX）网页表单，当使用者提交无效的表单资料，这个中间件遵循了最佳做法：
 
- - 首先，一個暫存變數可能被填入了一個字串或語義驗證錯誤物件。
- - 然後，將使用者重新導向回 `redirectTo`，即發出錯誤請求的來源 URL。
- - 還有，控制器和／或檢視可能使用暫存變數 `errors` 來顯示訊息或突顯無效的 HTML 表單欄位。
+ - 首先，一个暂存变数可能被填入了一个字串或语义验证错误对象。
+ - 然后，将使用者重新导向回 `redirectTo`，即发出错误请求的来源 URL。
+ - 还有，控制器和／或检视可能使用暂存变数 `errors` 来显示讯息或突显无效的 HTML 表单栏位。
 
 
 #### res.notFound()
 
-當請求者期望收到 JSON，這個回應會發送 404 狀態碼及一個 `{status: 404}` 物件。
+当请求者期望收到 JSON，这个回应会发送 404 状态码及一个 `{status: 404}` 对象。
 
-否則，將發送位於 `myApp/views/404.*` 內的檢視。若找不到檢視，那麼便發送 JSON 回應。
+否则，将发送位于 `myApp/views/404.*` 内的检视。若找不到检视，那么便发送 JSON 回应。
 
 #### res.forbidden(message)
 
-當請求者期望收到 JSON，這個回應會發送 403 狀態碼及 `message` 的內容。
+当请求者期望收到 JSON，这个回应会发送 403 状态码及 `message` 的内容。
 
-否則，將發送位於 `myApp/views/403.*` 內的檢視。若找不到檢視，那麼便發送 JSON 回應。
+否则，将发送位于 `myApp/views/403.*` 内的检视。若找不到检视，那么便发送 JSON 回应。
 
-### 自訂回應
+### 自定义回应
 
-要加入你自己的自訂回應方法，只需新增與方法名稱相同的檔案到 `/api/responses`。該檔案應該導出函數，可以附帶任何你喜歡的參數。
+要加入你自己的自定义回应方法，只需新增与方法名称相同的文档到 `/api/responses`。该文档应该导出函数，可以附带任何你喜欢的参数。
 
 ```
 /** 
@@ -90,44 +90,4 @@ foo: function(req, res) {
 
 module.exports = function(message) {
    
-  var req = this.req;
-  var res = this.res;
-   
-  var viewFilePath = 'mySpecialView';
-  var statusCode = 200;
-
-  var result = {
-    status: statusCode
-  };
-
-  // Optional message
-  if (message) {
-    result.message = message;
-  }
-
-  // If the user-agent wants a JSON response, send json
-  if (req.wantsJSON) {
-    return res.json(result, result.status);
-  }
-
-  // Set status code and view locals
-  res.status(result.status);
-  for (var key in result) {
-    res.locals[key] = result[key];
-  }
-  // And render view
-  res.render(viewFilePath, result, function(err) {
-    // If the view doesn't exist, or an error occured, send json
-    if (err) {
-      return res.json(result, result.status);
-    }
-
-    // Otherwise, serve the `views/mySpecialView.*` page
-    res.render(viewFilePath);
-  });   
-```
-
-
-<docmeta name="uniqueID" value="CustomResponses867259">
-<docmeta name="displayName" value="Custom Responses">
-
+  var 

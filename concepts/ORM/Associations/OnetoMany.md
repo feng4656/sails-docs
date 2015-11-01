@@ -1,11 +1,11 @@
-# 一對多（One-to-Many）
-### 概觀
+# 一对多（One-to-Many）
+### 概述
 
-一對多關聯表示一個模型可以關聯到許多其他模型。要建立這種關聯，要加入一個虛擬屬性 `collection` 到模型。在一對多關聯中，一邊必需有 `collection` 屬性，另一邊必需包含一個 `modal` 屬性。這讓「Many」那側知道當使用 `populate` 時，它需要取得哪些記錄。
+一对多关联表示一个模型可以关联到许多其他模型。要建立这种关联，要加入一个虚拟属性 `collection` 到模型。在一对多关联中，一边必需有 `collection` 属性，另一边必需包含一个 `modal` 属性。这让「Many」那侧知道当使用 `populate` 时，它需要取得哪些记录。
 
-因為你可能想要一個模型有多個一對多關聯到另一個模型，`collection` 屬性必需要有一個 `via` 鍵。這說明了哪一邊的關聯 `modal` 屬性會用來提供記錄。
+因为你可能想要一个模型有多个一对多关联到另一个模型，`collection` 属性必需要有一个 `via` 键。这说明了哪一边的关联 `modal` 属性会用来提供记录。
 
-### 一對多範例
+### 一对多例子
 
 `myApp/api/models/pet.js`
 
@@ -108,8 +108,8 @@ null [ { name: 'Applejack',
 
 ```
 
-### 注意事項
-> 請查看 [Waterline 文件](https://github.com/balderdashy/waterline-docs/blob/master/associations.md)取得這種類型的關聯的更多資訊
+### 注意事项
+> 请查看 [Waterline 文件](https://github.com/balderdashy/waterline-docs/blob/master/associations.md)取得这种类型的关联的更多资讯
 
 
 <docmeta name="uniqueID" value="OnetoMany478093">

@@ -1,8 +1,8 @@
-# 生命週期回呼（Lifecycle callbacks）
+# 生命周期回呼（Lifecycle callbacks）
 
-### 概觀
+### 概述
 
-Sails 公開了一些模型的生命週期回呼，在做某些動作之前或之後會自動被呼叫。例如，我們有時候會使用生命週期回呼在建立或更新帳號模型前自動加密密碼。另一個使用情況是當專案的 `name` 屬性更新時自動重新產生網址。
+Sails 公开了一些模型的生命周期回呼，在做某些动作之前或之后会自动被呼叫。例如，我们有时候会使用生命周期回呼在建立或更新帐号模型前自动加密密码。另一个使用情况是当工程的 `name` 属性更新时自动重新产生网址。
 
 ##### `create` 的回呼
 
@@ -24,9 +24,9 @@ Sails 公開了一些模型的生命週期回呼，在做某些動作之前或�
   - afterDestroy: fn(destroyedRecords, cb)
 
 
-### 範例
+### 例子
 
-如果你想在密碼儲存到資料庫前先加密，你可以使用 `beforeCreate` 生命週期回呼。
+如果你想在密码储存到资料库前先加密，你可以使用 `beforeCreate` 生命周期回呼。
 
 ```javascript
 var bcrypt = require('bcrypt');
@@ -50,14 +50,14 @@ module.exports = {
   },
 
 
-  // 生命週期回呼
+  // 生命周期回呼
   beforeCreate: function (values, cb) {
 
-    // 密碼加密
+    // 密码加密
     bcrypt.hash(values.password, 10, function(err, hash) {
       if(err) return cb(err);
       values.password = hash;
-      // 呼叫 cb() 時帶入一個參數，會返回錯誤。當某些條件失敗要取消整個操作時很有用。
+      // 呼叫 cb() 时带入一个参数，会返回错误。当某些条件失败要取消整个操作时很有用。
       cb();
     });
   }

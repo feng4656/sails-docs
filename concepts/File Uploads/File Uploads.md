@@ -1,11 +1,11 @@
-# 檔案上傳（File Uploads）
+# 文档上传（File Uploads）
 
 > TODO: Normalize/expand this section
 
-### 範例
+### 例子
 
-#### 產生一個 `api`
-首先，我們需要替 serving/storing 產生一個新的 `api` 檔案。用 sails 命令列工具執行此動作。
+#### 产生一个 `api`
+首先，我们需要替 serving/storing 产生一个新的 `api` 文档。用 sails 命令行工具执行此动作。
 
 ```sh
 
@@ -21,9 +21,9 @@ dude@littleDude:~/node/myApp$
 
 ```
 
-#### 撰寫控制器動作
+#### 撰写控制器动作
 
-讓我們建立一個 `index` 動作來開始檔案上傳及 `upload` 動作來接收檔案。
+让我们建立一个 `index` 动作来开始文档上传及 `upload` 动作来接收文档。
 
 ```javascript 
 
@@ -57,11 +57,11 @@ module.exports = {
 };
 ```
 
-#### 它們去哪了？
-使用預設的 `receiver`，上傳的檔案會在 `myApp/.tmp/uploads/` 目錄。你可以在 `upload` 動作內做你想做的任何事情。
+#### 它们去哪了？
+使用默认的 `receiver`，上传的文档会在 `myApp/.tmp/uploads/` 目录。你可以在 `upload` 动作内做你想做的任何事情。
 
-#### 上傳到自訂資料夾
-在上面的例子中，我們可以將檔案上傳到 .tmp/uploads。那麼我們該如何設定為自訂資料夾，例如 `assets/images`。我們可以透過增加選項到上傳功能來實現這一目標，如下所示：
+#### 上传到自定义文件夹
+在上面的例子中，我们可以将文档上传到 .tmp/uploads。那么我们该如何设置为自定义文件夹，例如 `assets/images`。我们可以通过增加选项到上传功能来实现这一目标，如下所示：
 ```javascript
 
   var uploadPath = './assets/images';
@@ -78,7 +78,7 @@ module.exports = {
   });
 ```
 
-> 請查看 [Skipper 文件](https://github.com/balderdashy/skipper)取得更多資訊及其他可用的 `receivers` 清單！
+> 请查看 [Skipper 文件](https://github.com/balderdashy/skipper)取得更多资讯及其他可用的 `receivers` 清单！
 
 
 

@@ -43,7 +43,7 @@ module.exports.models = {
 
 
 > Keep in mind that options you define directly in your model definitions will override these settings.
-> Prior to v0.10, adapters were defined in `myApp/config/Adapters.js`.  See v0.9 docs for more info.
+> Prior to v0.11.*, adapters were defined in `myApp/config/Adapters.js`.  See v0.9 docs for more info.
 
 
 ### Multiple connections for an adapter

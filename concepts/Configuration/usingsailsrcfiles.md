@@ -1,11 +1,11 @@
-# 使用 .sailsrc 檔案（Using .sailsrc Files）
+# 使用 .sailsrc 文档（Using .sailsrc Files）
 
 
-除了設定應用程式的其他方法外，從 0.10 版開始，你可以在 `.sailsrc` 檔案裡為指定一個或多個應用程式的設定（感謝 Dominic Tarr 的優秀 [`rc` 模組](https://github.com/dominictarr/rc)）。`rc` 檔案對於設定命令列和/或套用組態設定到所有執行在你電腦上的 Sails 應用程式最有用。
+除了设置应用程序的其他方法外，从 0.10 版开始，你可以在 `.sailsrc` 文档里为指定一个或多个应用程序的设置（感谢 Dominic Tarr 的优秀 [`rc` 模组](https://github.com/dominictarr/rc)）。`rc` 文档对于设置命令行和/或套用组件设置到所有执行在你电脑上的 Sails 应用程序最有用。
 
-當 Sails 命令列介面執行一個指令時，它會先在當前目錄和你的家目錄（即 `~/.sailsrc`）（任何新建立的 Sails 應用程式附帶的樣版 `.sailsrc` 檔案）尋找 `.sailsrc` 檔案（JSON 或 [.ini](http://en.wikipedia.org/wiki/INI_file) 格式）。然後將它們合併到現有的組態設定。
+当 Sails 命令行界面执行一个指令时，它会先在当前目录和你的家目录（即 `~/.sailsrc`）（任何新建立的 Sails 应用程序附带的模板 `.sailsrc` 文档）寻找 `.sailsrc` 文档（JSON 或 [.ini](http://en.wikipedia.org/wiki/INI_file) 格式）。然后将它们合并到现有的组件设置。
 
-> 其實，Sails 會從其它幾個地方尋找 `.sailsrc` 檔案（遵循 [rc 慣例](https://github.com/dominictarr/rc#standards)）。你可以放置 `.sailsrc` 檔案到這些路徑。也就是說，你最好能遵循慣例，放置公用 `.sailsrc` 檔案的地方是你的家目錄（即 `~/.sailsrc`）。
+> 其实，Sails 会从其它几个地方寻找 `.sailsrc` 文档（遵循 [rc 约定](https://github.com/dominictarr/rc#standards)）。你可以放置 `.sailsrc` 文档到这些路径。也就是说，你最好能遵循约定，放置公用 `.sailsrc` 文档的地方是你的家目录（即 `~/.sailsrc`）。
 
 
 

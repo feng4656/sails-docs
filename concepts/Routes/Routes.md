@@ -52,22 +52,4 @@ What if I want to change the view layout within the route itself?  No problem we
 
 In addition to your custom routes, Sails binds many routes for you automatically.  If a URL doesn't match a custom route, it may match one of the automatic routes and still generate a response.  The main types of automatic routes in Sails are:
 
-* [Blueprint routes](http://beta.sailsjs.org/#/documentation/reference/blueprint-api?q=blueprint-routes), which provide your [controllers](http://beta.sailsjs.org/#/documentation/concepts/Controllers) and [models](http://beta.sailsjs.org/#/documentation/concepts/ORM/Models.html) with a full REST API.
-* [Assets](http://beta.sailsjs.org/#/documentation/concepts/Assets), such as images, Javascript and stylesheet files.
-* [CSRF](http://beta.sailsjs.org/#/documentation/concepts/Security/CSRF.html), if turned on, provides a **/csrfToken** route to your app that can be used to retrieve the CSRF token.
-
-
-### Supported Protocols
-
-The Sails router is "protocol-agnostic"; it knows how to handle both [HTTP requests](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) and messages sent via [WebSockets](http://en.wikipedia.org/wiki/Websockets). It accomplishes this by listening for Socket.io messages sent to reserved event handlers in a simple format, called JWR (JSON-WebSocket Request/Response).  This specification is implemented and available out of the box in the [client-side socket SDK](http://beta.sailsjs.org/#/documentation/reference/websockets/sails.io.js). 
-
-
-
-#### Notes
-+ Advanced users may opt to circumvent the router entirely and send low-level, completely customizable WebSocket messages directly to the underlying Socket.io server.  You can bind socket events directly in your app's [`onConnect`](http://beta.sailsjs.org/#/documentation/reference/sails.config/sails.config.sockets.html?q=commonlyused-options) function (located in [`config/sockets.js`](http://beta.sailsjs.org/#/documentation/anatomy/myApp/config/sockets.js.html).)  But bear in mind that, in most cases, you are better off leveraging the request interpreter for socket communication - maintaining consistent routes across HTTP and WebSockets helps keep your app maintainable.
-
-
-
-<docmeta name="uniqueID" value="Routes849188">
-<docmeta name="displayName" value="Routes">
-
+* [Blueprint routes](http://beta.sailsjs.org/#/documentation/reference/blueprint-api?q=blueprint-routes), which provide your [controllers](http

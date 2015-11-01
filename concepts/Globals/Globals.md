@@ -1,32 +1,32 @@
-# 全域變數（Globals）
-### 概觀
+# 全局变数（Globals）
+### 概述
 
-為了方便起見，Sails 公開了一些全域變數。預設情況下，應用程式的[模型](http://beta.sailsjs.org/#/documentation/reference/Models)、[服務](http://beta.sailsjs.org/#/documentation/reference/Services)，和全域 `sails` 物件都存在於全域範圍；這代表你可以在後端程式碼的任何地方透過名稱參考使用它們（只要 Sails [已經載入](https://github.com/balderdashy/sails/tree/master/lib/app)）。
+为了方便起见，Sails 公开了一些全局变数。默认情况下，应用程序的[模型](http://beta.sailsjs.org/#/documentation/reference/Models)、[服务](http://beta.sailsjs.org/#/documentation/reference/Services)，和全局 `sails` 对象都存在于全局范围；这代表你可以在后端程序码的任何地方通过名称参考使用它们（只要 Sails [已经载入](https://github.com/balderdashy/sails/tree/master/lib/app)）。
 
-在 Sails 核心沒有什麼東西是依賴於這些全域變數，每個公開的全域變數也可以在 `sails.config.globals` 內禁用（通常設定在 `config/globals.js`）。
+在 Sails 核心没有什么东西是依赖于这些全局变数，每个公开的全局变数也可以在 `sails.config.globals` 内禁用（通常设置在 `config/globals.js`）。
 
 
-### 應用程式物件（`sails`）
-在大多數情況下，你會想保留 `sails` 物件的全域存取，它使你的程式碼更加乾淨。但是，如果你_確實_需要禁用_所有_全域變數，包含 `sails`，你可以從請求物件（`req`）存取 `sails`。
+### 应用程序对象（`sails`）
+在大多数情况下，你会想保留 `sails` 对象的全局存取，它使你的程序码更加干净。但是，如果你_确实_需要禁用_所有_全局变数，包含 `sails`，你可以从请求对象（`req`）存取 `sails`。
 
-### 模型和服務
-應用程式的[模型](http://beta.sailsjs.org/#/documentation/reference/Models)和[服務](http://beta.sailsjs.org/#/documentation/reference/Services)被透過它們的 `globalId` 公開為全域變數。例如，定義在 `api/models/Foo.js` 檔案的模型可以透過 `Foo` 在全域存取，而定義在 `api/services/Baz.js` 的服務則可透過 `Baz` 存取。
+### 模型和服务
+应用程序的[模型](http://beta.sailsjs.org/#/documentation/reference/Models)和[服务](http://beta.sailsjs.org/#/documentation/reference/Services)被通过它们的 `globalId` 公开为全局变数。例如，定义在 `api/models/Foo.js` 文档的模型可以通过 `Foo` 在全局存取，而定义在 `api/services/Baz.js` 的服务则可通过 `Baz` 存取。
 
 ### Async（`async`）和 Lodash（`_`）
-Sails 也公開 `_` 為 [lodash](http://lodash.com) 的實例，以及 `async` 為 [async](https://github.com/caolan/async) 的實例。預設已提供這些常用的套件，這樣你就不必在每個新專案 `npm install` 它們。如同 sails 的其他全域變數，它們可以被禁用。
+Sails 也公开 `_` 为 [lodash](http://lodash.com) 的实例，以及 `async` 为 [async](https://github.com/caolan/async) 的实例。默认已提供这些常用的套件，这样你就不必在每个新工程 `npm install` 它们。如同 sails 的其他全局变数，它们可以被禁用。
 
-### 禁用全域變數
+### 禁用全局变数
 
-Sails 透過檢查 [`sails.config.globals`](http://beta.sailsjs.org/#/documentation/reference/sails.config/sails.config.globals.html) 來決定要公開哪個全域變數，通常設定在 [`config/globals.js`](http://beta.sailsjs.org/#/documentation/anatomy/myApp/config/globals.js.html)。
+Sails 通过检查 [`sails.config.globals`](http://beta.sailsjs.org/#/documentation/reference/sails.config/sails.config.globals.html) 来决定要公开哪个全局变数，通常设置在 [`config/globals.js`](http://beta.sailsjs.org/#/documentation/anatomy/myApp/config/globals.js.html)。
 
-要禁用所有全域變數，只需將組態設定為 `false`：
+要禁用所有全局变数，只需将组件设置为 `false`：
 
 ```js
 // config/globals.js
 module.exports.globals = false;
 ```
 
-要禁用_一些_全域變數，指定一個物件來代替，例如：
+要禁用_一些_全局变数，指定一个对象来代替，例如：
 
 ```js
 // config/globals.js
@@ -38,9 +38,9 @@ module.exports.globals = {
 };
 ```
 
-### 注意事項
+### 注意事项
 
-> + 請記住，在 sails 被載_入前_，沒有一個全域變數，包含 `sails`，可以被存取。換句話說，你不能使用 `sails.models.user` 或 `User` 功能（因為 `sails` 還沒載入完成。）
+> + 请记住，在 sails 被载_入前_，没有一个全局变数，包含 `sails`，可以被存取。换句话说，你不能使用 `sails.models.user` 或 `User` 功能（因为 `sails` 还没载入完成。）
 
 <!-- not true anymore:
 Most of this section of the docs focuses on the methods and properties of `sails`, the singleton object representing your app.  

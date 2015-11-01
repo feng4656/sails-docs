@@ -131,21 +131,3 @@ Create a new pony named "Pinkie Pie", an "ice skating" hobby, and a new pet name
 ```
 
 #### Expected Response
-```json
-{
-  "name": "Pinkie Pie",
-  "hobby": "ice skating",
-  "pet": {
-    "name": "Gummy",
-    "species": "crocodile"
-    "id": 10
-  },
-  "id": 4,
-  "createdAt": "2013-10-18T01:22:56.000Z",
-  "updatedAt": "2013-11-26T22:54:19.951Z"
-}
-```
-
-<docmeta name="uniqueID" value="CreateARecord744986">
-<docmeta name="displayName" value="create">
-

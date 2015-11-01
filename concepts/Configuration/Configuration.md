@@ -1,42 +1,42 @@
-# 設定（Configuration）
+# 设置（Configuration）
 
-### 概觀
+### 概述
 
-雖然 Sails 盡責的堅守[慣例優於設定](http://en.wikipedia.org/wiki/Convention_over_configuration)的理念，但了解如何自訂這些方便的預設值是很重要的。對於幾乎每個 Sails 的慣例，允許你調整或覆蓋附帶的設定選項，以滿足你的需求。本章節的文件完整包含了 Sails 可用的設定選項。
+虽然 Sails 尽责的坚守[约定优于配置](http://en.wikipedia.org/wiki/Convention_over_configuration)的理念，但了解如何自定义这些方便的默认值是很重要的。对于几乎每个 Sails 的约定，允许你调整或覆盖附带的设置选项，以满足你的需求。本章节的文件完整包含了 Sails 可用的设置选项。
 
-Sails 應用程式可以透過[程式設定](https://github.com/mikermcneil/sails-generate-new-but-like-express/blob/master/templates/app.js#L15)，透過指定[環境變數](http://en.wikipedia.org/wiki/Environment_variable)或命令列參數，透過改變區域或全域 [`.sailsrc` 檔案](http://beta.sailsjs.org/#/documentation/anatomy/myApp/sailsrc.html)，或（最常見）使用照慣例位於專案內 [`config/`](http://beta.sailsjs.org/#/documentation/anatomy/myApp/config) 資料夾的樣版設定檔案。執行時期可透過 `sails` 全域變數的 `sails.config` 在應用程式使用合併後的設定。
+Sails 应用程序可以通过[程序设置](https://github.com/mikermcneil/sails-generate-new-but-like-express/blob/master/templates/app.js#L15)，通过指定[环境变数](http://en.wikipedia.org/wiki/Environment_variable)或命令行参数，通过改变区域或全局 [`.sailsrc` 文档](http://beta.sailsjs.org/#/documentation/anatomy/myApp/sailsrc.html)，或（最常见）使用约定位于工程内 [`config/`](http://beta.sailsjs.org/#/documentation/anatomy/myApp/config) 文件夹的模板设置文档。执行时期可通过 `sails` 全局变数的 `sails.config` 在应用程序使用合并后的设置。
 
 
-### 標準設定檔案 (`config/*`)
+### 标准设置文档 (`config/*`)
 
-在預設情況下，新的 Sails 應用程式包含許多的設定檔案。這些樣版檔案包含了一些行內註解，目的是為了提供一個快速、即時的參考，而不必來回跳轉於文件與文字編輯器之間。
+在默认情况下，新的 Sails 应用程序包含许多的设置文档。这些模板文档包含了一些行内注解，目的是为了提供一个快速、即时的参考，而不必来回跳转于文件与文字编辑器之间。
 
-在多數情況下，`sails.config` 物件的頂層鍵（例如 `sails.config.views`）對應在應用程式內特定的設定檔案（例如 `config/views.js`）；而設定可以安排在 `config/` 目錄內任何你喜歡的檔案中。重要的部份是設定的名稱（即鍵），不是它從哪個檔案來。
+在多数情况下，`sails.config` 对象的顶层键（例如 `sails.config.views`）对应在应用程序内特定的设置文档（例如 `config/views.js`）；而设置可以安排在 `config/` 目录内任何你喜欢的文档中。重要的部分是设置的名称（即键），不是它从哪个文档来。
 
-舉例來說，假設你新增一個新檔案，`config/foo.js`：
+举例来说，假设你新增一个新文档，`config/foo.js`：
 
 ```js
 // config/foo.js
-// 物件會被合併到 `sails.config.blueprints`：
+// 对象会被合并到 `sails.config.blueprints`：
 module.exports.blueprints = {
   shortcuts: false
 };
 ```
 
-對於個別設定項目的詳細參考資料，預設存在於該設定檔中，請參考本章節內的參考資料頁面，或查看[Sails 應用程式剖析](./#!documentation/anatomy)的[「`config/`」](http://beta.sailsjs.org/#/documentation/anatomy/myApp/config)取得更多的說明。
+对于个别设置项目的详细参考资料，默认存在于该设置文档中，请参考本章节内的参考资料页面，或查看[Sails 应用程序剖析](./#!documentation/anatomy)的[「`config/`」](http://beta.sailsjs.org/#/documentation/anatomy/myApp/config)取得更多的说明。
 
 
 
 
 
-### 在你的應用程式存取 `sails.config`
+### 在你的应用程序存取 `sails.config`
 
-`config` 物件存在於 Sails 應用程式實例（`sails`）。預設情況下，在啟動時會置於[全域範圍](http://beta.sailsjs.org/#/documentation/concepts/Globals)，因此存在於應用程式的任何地方。
+`config` 对象存在于 Sails 应用程序实例（`sails`）。默认情况下，在启动时会置于[全局范围](http://beta.sailsjs.org/#/documentation/concepts/Globals)，因此存在于应用程序的任何地方。
 
-##### 範例
+##### 例子
 ```javascript
-// 這個範例檢查在正式環境時 csrf 必需啟動。
-// 否則，拋出錯誤並終止應用程式。
+// 这个例子检查在生产环境时 csrf 必需启动。
+// 否则，抛出错误并终止应用程序。
 if (sails.config.environment === 'production' && !sails.config.csrf) {
   throw new Error('STOP IMMEDIATELY ! CSRF should always be enabled in a production deployment!');
 }
@@ -44,10 +44,10 @@ if (sails.config.environment === 'production' && !sails.config.csrf) {
 
 
 
-### 自訂組態設定
-Sails 能辨認頂層鍵下的許多不同設定、名稱空間（如 `sails.config.sockets` 和 `sails.config.blueprints`）。但你也可以在你的自訂組態設定使用 `sails.config`（如`sails.config.someProprietaryAPI.secret`）。
+### 自定义组件设置
+Sails 能辨认顶层键下的许多不同设置、命名空间（如 `sails.config.sockets` 和 `sails.config.blueprints`）。但你也可以在你的自定义组件设置使用 `sails.config`（如`sails.config.someProprietaryAPI.secret`）。
 
-##### 範例
+##### 例子
 
 ```javascript
 // config/linkedin.js
@@ -68,22 +68,8 @@ var apiSecret = sails.config.linkedin.apiSecret;
 
 
 
-### 設定 `sails` 命令列介面
+### 设置 `sails` 命令行界面
 
-當談到設定，大部分時間你會專注於管理特定應用程式的執行時期設定：連接埠、資料庫連線，等等。然而，為了簡化你的工作流程，減少重複性任務，執行自訂的自動化建置等，自訂 Sails 命令列介面也是很有用的。值得慶幸的是，Sails v0.10 增加了強大的新工具來做到這一點。
+当谈到设置，大部分时间你会专注于管理特定应用程序的执行时期设置：连接埠、资料库连线，等等。然而，为了简化你的工作流程，减少重复性任务，执行自定义的自动化建置等，自定义 Sails 命令行界面也是很有用的。值得庆幸的是，Sails v0.11.* 增加了强大的新工具来做到这一点。
 
-[`.sailsrc` 檔案](http://beta.sailsjs.org/#/documentation/anatomy/myApp/sailsrc.html)與其他在 Sails 中的設定檔不同，它也可以被用於設定 Sails 命令列介面－無論是全系統、目錄群組或僅當你 `cd` 到特定資料夾。這樣做的主要理由是自訂用於執行 `sails generate` 和 `sails new` 的[產生器](http://beta.sailsjs.org/#/documentation/concepts/extending-sails/Generators)，但它在安裝你自己的自訂產生器或套用覆蓋寫死的設定也很有用。
-
-而且，由於 Sails 會尋找距離目前工作目錄的父目錄最近的 `.sailsrc`，你可以放心的使用該檔案來設定無法簽入雲端代碼儲存庫的敏感設定（_如 **資料庫密碼**_。）只要在你的「$HOME」目錄加入 `.sailsrc` 檔案。請查看[`.sailsrc` 文件](http://beta.sailsjs.org/#/documentation/anatomy/myApp/sailsrc.html)檔案取得更多資訊。
-
-
-
-
-### 注意事項
-> 在 `sails.config` 內的設定的意義是，在某些情況下，只有在 Sails 「啟動」時才會被解析。換句話說，在執行時期改變一些選項並不會生效。舉例來說，要改變應用程式執行所用的連接埠，你不能只改變 `sails.config.port`，你需要改變或覆寫設定檔的設定或命令列的參數等，然後重新啟動伺服器。
-
-
-
-<docmeta name="uniqueID" value="Configuration615655">
-<docmeta name="displayName" value="Configuration">
-
+[`.sailsrc` 文档](http://beta.sailsjs.org/#/documentation/anatomy/myApp/sailsrc.html)与其他在 Sails 中的设置文档不同，它也可以被用于设置 Sails 命令行界面－无论是全系统、目录群组或仅当你 `cd` 到特定文件夹。这样做的主要理由是自定义用于执行 `sails generate` 和 `sails new` 的[产生器](http://beta.sailsjs.org/#/documentation/concepts/extending-sai

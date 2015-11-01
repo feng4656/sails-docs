@@ -100,7 +100,4 @@ Feel free to change this as you see fit.  Its also a great place to include java
 
     <!--SCRIPTS-->
     <!--SCRIPTS END-->
-  </body>
-</html>
-
-```
+ 

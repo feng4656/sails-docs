@@ -1,11 +1,11 @@
-# 單向關聯（One Way Association）
-### 概觀
+# 单向关联（One Way Association）
+### 概述
 
-單向關聯就是一個模型關聯到另一個模型。你可以查詢該模型並提供所關聯的模型。但是，你不能查詢被關聯的模型並提供關聯它的模型。
+单向关联就是一个模型关联到另一个模型。你可以查询该模型并提供所关联的模型。但是，你不能查询被关联的模型并提供关联它的模型。
 
-### 單向關聯範例
+### 单向关联例子
 
-在這個範例中，我們關聯了一個 `User` 到 `Pet`，而不是 `Pet` 到 `User`。
+在这个例子中，我们关联了一个 `User` 到 `Pet`，而不是 `Pet` 到 `User`。
 
 `myApp/api/models/pet.js`
 
@@ -74,10 +74,10 @@ null [ { name: 'Mike',
 
 
 ```
-### 注意事項
-> 請查看 [Waterline 文件](https://github.com/balderdashy/waterline-docs/blob/master/associations.md)取得這種類型的關聯的更多資訊
+### 注意事项
+> 请查看 [Waterline 文件](https://github.com/balderdashy/waterline-docs/blob/master/associations.md)取得这种类型的关联的更多资讯
 
-> 因為我們只形成一個關聯於一個模型，`Pet` 沒有歸屬於 `User` 模型的數量限制。如果我們想要，我們可以改變這一點，讓 `Pet` 正好關聯到一個 `User` ，且 `User` 正好關聯到一個 `Pet`。
+> 因为我们只形成一个关联于一个模型，`Pet` 没有归属于 `User` 模型的数量限制。如果我们想要，我们可以改变这一点，让 `Pet` 正好关联到一个 `User` ，且 `User` 正好关联到一个 `Pet`。
 
 <docmeta name="uniqueID" value="OneWayAssociation708096">
 <docmeta name="displayName" value="One Way Association">

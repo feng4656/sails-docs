@@ -32,48 +32,4 @@ The current version of Sails ships with the following blueprint actions:
 
 + [find](./#/documentation/reference/blueprint-api/Find.html)
 + [findOne](./#/documentation/reference/blueprint-api/FindOne.html)
-+ [create](./#/documentation/reference/blueprint-api/Create.html)
-+ [update](./#/documentation/reference/blueprint-api/Update.html)
-+ [destroy](./#/documentation/reference/blueprint-api/Destroy.html)
-+ [populate](./#/documentation/reference/blueprint-api/Populate.html)
-+ [add](./#/documentation/reference/blueprint-api/Add.html)
-+ [remove](./#/documentation/reference/blueprint-api/Remove.html)
-
-Consequently, the blueprint API methods covered in this section of the documentation correspond one-to-one with the blueprint actions above.
-
-### Overriding Blueprints
-
-( taken from https://stackoverflow.com/questions/22273789/crud-blueprint-overriding-in-sailsjs )
-
-To override blueprints in Sails v0.10, you create an api/blueprints folder and add your blueprint files (e.g. find.js, create.js, etc.) within. You can take a look at the code for the default actions in the Sails blueprints hook for a head start.
-
-**Note:** Currently all files must be lowercase! (The default actions contains findOne.js, but in /api/blueprints it needs to be findone.js)
-
-Adding custom blueprints is also supported, but they currently do not get bound to routes automatically. If you create a /blueprints/foo.js file, you can bind a route to it in your /config/routes.js file with (for example):
-
-    GET /myRoute': {blueprint: 'foo'}
-
-
-### Disabling blueprints on a per-controller basis
-
-You may also override any of the settings from `config/blueprints.js` on a per-controller basis by defining a '_config' key in your controller defintion, and assigning it a configuration object with overrides for the settings in this file.
-
-```
-module.exports = {
-  _config: {
-    actions: false,
-    shortcuts: false,
-    rest: false
-  }
-}
-
-```
-
-### Notes
-
-> + While the following documentation focuses on HTTP, the blueprint API (just like any of your custom actions and policies) is also compatible with WebSockets, thanks to the request interpreter.  Check out the reference section on the [browser SDK](/#/documentation/reference/websockets/sails.io.js) for example usage.
->
-
-<docmeta name="uniqueID" value="blueprintapi170785">
-<docmeta name="displayName" value="Blueprint API">
-<docmeta name="stabilityIndex" value="2">
++ [create](./#/documentation/refere
