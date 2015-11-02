@@ -33,11 +33,11 @@ Sort of! The goal is to make hooks powerful, and simple to work w/ for plugin de
 
 That said, you _can_ write and distribute a custom hook today.  If you're interested in the roadmap for the plugin system, or developing a plugin yourself, consider/check out the following tools at your disposal:
 
-+ [Custom Generators](https://github.com/balderdashy/sails/blob/v0.11.*/bin/generators/README.md) :: coming in v0.11.*, useful for extending the Sails command-line interface (Stage 1 - Experimental)
++ [Custom Generators](https://github.com/balderdashy/sails/blob/v0.11/bin/generators/README.md) :: coming in v0.11, useful for extending the Sails command-line interface (Stage 1 - Experimental)
 + [Custom Adapters](https://github.com/balderdashy/sails-docs/blob/0.9/api.adapter-interface.md) :: Since v0.8, useful for adding database support, API integrations, etc. (Stage 2 - Unstable, but approaching Stage 3)
 + [`sails` Core Events](https://gist.github.com/mikermcneil/5898598) :: Since v0.9, the `sails` object is an EventEmitter. (Stage 2 - Unstable, but approaching Stage 3)
-+ Custom blueprint middlewares (coming in v0.11.*: Stage 1 - Experimental)
-+ Custom API responses (coming in v0.11.*: Stage 2 - Unstable)
++ Custom blueprint middlewares (coming in v0.11: Stage 1 - Experimental)
++ Custom API responses (coming in v0.11: Stage 2 - Unstable)
 + Custom route-level options (since v0.9, but changing in 0.10: Stage 2 - Unstable, but approaching Stage 3)
 + Custom configuration (since v0.7)
 + Custom "shadow routes" (since v0.7, merged in hooks in v0.9)

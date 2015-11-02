@@ -5,7 +5,7 @@
 + This is mirrored by the [master branch of the `sails-docs` repo on github](https://github.com/balderdashy/sails-docs)
   + The content in the Github repo is eventually pushed to the website.
   + It is usually a several commits ahead, and is the go-to place for the most up-to-date information.
-  + This will become more automated as we're able to get more time to automate our tools (will open-source these asap post v0.11.* release)
+  + This will become more automated as we're able to get more time to automate our tools (will open-source these asap post v0.11 release)
 
 ### How do I get involved?
 + [Help us improve the documentation](https://github.com/balderdashy/sails-docs)
@@ -36,7 +36,7 @@ For more instructions on installing the stable, beta, and edge versions of Sails
 
 [![Dependency Status](https://david-dm.org/balderdashy/sails.png)](https://david-dm.org/balderdashy/sails)
 
-Sails is tested with [node](http://nodejs.org/) versions 0.8.22 and 0.10.x, and built on the rock-solid foundations of [Express](https://github.com/expressjs/) and [Socket.io](http://socket.io/).  It also depends on other great modules, like grunt, waterline, and fs-extra.  Click the badge above for the full list of dependencies.
+Sails is tested with [node](http://nodejs.org/) versions 0.8.22 and v0.11.x, and built on the rock-solid foundations of [Express](https://github.com/expressjs/) and [Socket.io](http://socket.io/).  It also depends on other great modules, like grunt, waterline, and fs-extra.  Click the badge above for the full list of dependencies.
 
 
 ### Where do I get help?

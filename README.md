@@ -1,16 +1,33 @@
-# Sails.js Documentation (v0.11.*.x)
+#Sails.js 开发框架官方文档中文版 (v0.11.x)
 
 
-Guide and reference documentation for the 0.10.x release of Sails.  Content for most sections on the Sails website (beta.sailsjs.org) is compiled from here.  In some cases, the markdown files are split, relinked, converted to HTML, or formatted to fit within the skin of sailsjs.org- but most of the time, a `.md` file in this repo corresponds one-to-one with a client-side route on the website (e.g. `/#/documentation/reference/Blueprints/Create.html`).
+#### 关于`sails.js`
 
+`sails.js`类似于ruby on rails, 是一个优秀的web后台开发框架。它基于著名的`express`，添加了很多功能模块，支持`REST`、各种流行数据库等，
+使用它开发适用于多设备、数据密集型、实时web应用是件异常简单、高效、愉快的事情。
 
-##### Contributing to the docs
-> We welcome your help!  Please send a pull request to **master** with corrections/additions and they'll be double-checked and merged as soon as possible.
->
-> Secondly, we are open to suggestions about the process we're using to manage our documentation, and to work with the community in general.  Please post to the Google Group with your ideas- or if you're interested in helping directly, contact @ncrumrine, @loicsaintroch, or @mikermcneil on Twitter.
+#### 关于本文档
 
-##### How often are these files compiled and pushed to the website?
-> Currently, these docs are pushed almost instantaneously to www.sailsjs.org.  That will likely continue to happen for the forseeable future.
-> 
-> However, when v0.11.*.0 is released as "stable", docs will **also** be compiled and pushed to http://sailsjs.org every time a new stable release of Sails is published to npm.  In general, this repo should follow the same versioning strategy as Sails (using tags).
+本文档是 [sails.js官方文档](http://www.sailsjs.org) 中文版本，力争做到“覆盖全面、理解正确、表述清晰”，如果您感觉没有达到这一点，可以翻看对应英文原文（我写的+我想的=原文，^_^）。
 
+为了方便，我们配合本文档，借助`gitbook`平台推出了PDF等个格式的电子书，您可以下载到本地使用。
+
+#### 贡献
+
+本书原稿托管在 [github](https://github.com/imfly/sails-docs/tree/zh-CN) 上，您也可以参与进来，直接fork、修改、提交pr就可以了。
+
+电子书的生成，需要使用我们的插件 [gitbook-summary](https://github.com/imfly/gitbook-summary)自动生成一个目录，然后借助`gitbook`导出。
+
+#### 链接
+
+下载页： https://imfly.gitbooks.io/sailsjs-docs-gitbook/
+
+中文版： https://imfly.gitbooks.io/sailsjs-docs-gitbook/content/cn/index.html
+
+英文版： https://imfly.gitbooks.io/sailsjs-docs-gitbook/content/en/index.html
+
+原码库： https://github.com/imfly/sails-docs/tree/zh-CN
+
+#### 协议
+
+MIT

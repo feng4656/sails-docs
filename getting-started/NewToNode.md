@@ -58,7 +58,7 @@ sudo apt-get install nodejs
 
 它安装了目前在稳定版 Ubuntu 的稳定版 Node。Quantal（12.10）使用者可能需要安装 *software-properties-common* 套件让 `add-apt-repository` 指令可正常执行：`sudo apt-get install software-properties-common`
 
-自 Node.js v0.11.*.0 起，从 [Chris Lea](https://chrislea.com/2013/03/15/upgrading-from-node-js-0-8-x-to-0-10-0-from-my-ppa/) 的储存库来的 nodejs 套件同时包含了 npm 和 nodejs-dev。
+自 Node.js v0.11.0 起，从 [Chris Lea](https://chrislea.com/2013/03/15/upgrading-from-node-js-0-8-x-to-0-10-0-from-my-ppa/) 的储存库来的 nodejs 套件同时包含了 npm 和 nodejs-dev。
 
 存在与 node 套件的命名冲突（Amateur Packet Radio Node Program），且 nodejs 二进位文档已经由 `node` 重新命名为 `nodejs`。你需要建立软连结 `/usr/bin/node` 到 `/usr/bin/nodejs`，或者可以移除 Amateur Packet Radio Node Program 以避免冲突。
 

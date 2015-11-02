@@ -70,6 +70,6 @@ var apiSecret = sails.config.linkedin.apiSecret;
 
 ### 设置 `sails` 命令行界面
 
-当谈到设置，大部分时间你会专注于管理特定应用程序的执行时期设置：连接埠、资料库连线，等等。然而，为了简化你的工作流程，减少重复性任务，执行自定义的自动化建置等，自定义 Sails 命令行界面也是很有用的。值得庆幸的是，Sails v0.11.* 增加了强大的新工具来做到这一点。
+当谈到设置，大部分时间你会专注于管理特定应用程序的执行时期设置：连接埠、资料库连线，等等。然而，为了简化你的工作流程，减少重复性任务，执行自定义的自动化建置等，自定义 Sails 命令行界面也是很有用的。值得庆幸的是，Sails v0.11 增加了强大的新工具来做到这一点。
 
 [`.sailsrc` 文档](http://beta.sailsjs.org/#/documentation/anatomy/myApp/sailsrc.html)与其他在 Sails 中的设置文档不同，它也可以被用于设置 Sails 命令行界面－无论是全系统、目录群组或仅当你 `cd` 到特定文件夹。这样做的主要理由是自定义用于执行 `sails generate` 和 `sails new` 的[产生器](http://beta.sailsjs.org/#/documentation/concepts/extending-sai

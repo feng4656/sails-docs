@@ -7,7 +7,7 @@ Wondering how you can help?  Here's what's next.
 
 ## Sails Core
 
-#### Streaming File Uploads/Downloads (v0.11.*.x)
+#### Streaming File Uploads/Downloads (v0.11.x)
 
 > Update: This is [mostly finished](https://github.com/mikermcneil/file-parser), just needs some testers, It shouldn't go into core until Connect v3 is released.
 >         (tweet @mikermcneil for more info on that)
@@ -38,7 +38,7 @@ See the adapters section below for information on targeted blob store adapters.
 > [Associations] are coming along nicely.
 
 + Associations
-  + v0.11.*.0
+  + v0.11.0
     + See trello
 
 + Aggregations/GROUP BY (~v0.11.0)
@@ -49,7 +49,7 @@ See the adapters section below for information on targeted blob store adapters.
   + Need a way for adapters to conditionally implement aggregations/groupBy/having.
 
 + Error Messages
-  + ~v0.11.*.0
+  + ~v0.11.0
     + More meaningful messages on fatal, lift-time/schema errors
     + More meaningful messages on runtime errors, prevent server crashing (allows you to be a little less careful when you write your user code)
   + ~v0.11.0
@@ -60,7 +60,7 @@ See the adapters section below for information on targeted blob store adapters.
       + Invalid usage of Waterline methods at runtime should result in a server error.
 
 + Auto-migrations
-  + v0.11.*.0
+  + v0.11.0
     + Docs on auto-migration strategies (alter, drop, safe)
   + ~v0.11.0
     + Make `alter` strategy work w/ associations-- probably should be pushed down to the adapter level in the `alter` method.
