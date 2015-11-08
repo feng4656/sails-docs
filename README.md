@@ -12,9 +12,11 @@ http://imfly.github.io/sails-docs/
 
 本书原稿托管在 [github](https://github.com/imfly/sails-docs/tree/zh-CN) 上，您也可以参与进来，直接fork、修改、提交PR。
 
-电子书的生成，需要使用我们的插件 [gitbook-summary](https://github.com/imfly/gitbook-summary)自动生成一个目录，然后借助`gitbook`导出。
+电子书生成，使用了插件 [gitbook-summary](https://github.com/imfly/gitbook-summary)自动生成一个目录，然后借助`gitbook`导出。
 
-问题反馈，请[点击这里](https://github.com/imfly/sails-docs/issues)。
+#### 反馈
+
+请[点击这里](https://github.com/imfly/sails-docs/issues)。
 
 #### 链接
 
